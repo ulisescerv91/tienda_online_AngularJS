@@ -25,6 +25,7 @@ storeCtrl.controller('loginCtrl', ['$scope','$http','admin', function($scope,$ht
 			myPromise=admin.login($scope.txtName,$scope.txtPass);		
 			//cuando ya tenga la informacion pobremos manipularla
 			myPromise.then(function (data) {
+				//informacion desde el SERVICEs
 				console.log(data)				
 			})
 			//console.log(admin.query);

@@ -16,11 +16,16 @@ myServices.factory("mensajes", function(){
     return objeto;
 });
 
+//Service HACER LOGIN de ADMIN
+/*
+    $q -> nos ayuda  a enviar informacion al controlador(conocida como 'promise')
+*/
 myServices.service("admin", ['$http','$q' ,function($http,$q){
+    //declaramos  la PROMISe
     var defer = $q.defer()   
    //properties
-    this.nombre="hola";
-    //methods
+    //this.nombre="hola";
+    //methods del Serivicio
     this.login=function(user,pass){
         $http.post('private/login.php', { 
                 x: user,
@@ -28,6 +33,7 @@ myServices.service("admin", ['$http','$q' ,function($http,$q){
             }).success(function(data) {                                                                                
                     if(!data.success){                                          
                         if(data.errors.user_status)                                             
+                            //Con esto enviamos informacion al controller
                             defer.resolve(data);
                     }else{
                         
@@ -38,8 +44,10 @@ myServices.service("admin", ['$http','$q' ,function($http,$q){
                     }                                      
                 })
             .error(function(data) {
+                //Con esto enviamos informacion al controller
                   defer.reject('Error to take Data');
-            });                    
+            });             
+            //retornamos promise para que el controlador puedo manipular la informacion       
         return defer.promise;
     }   
 }]);
