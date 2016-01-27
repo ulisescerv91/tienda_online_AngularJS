@@ -22,11 +22,11 @@ appAdmin.controller('loginCtrl', ['$scope','$http', function($scope,$http){
 	        			if(data.errors.user_status) 				
             			$scope.dataError=data.errors.user_status;
 	        		}else{
-                     	//window.location.href = 'panel/';
                      	// Stores
 						localStorage.setItem("id_user", data.user_id);						
 						localStorage.setItem("name_user", data.user_name);
 						localStorage.setItem("type_user", data.user_type);							        			
+                     	window.location.href = 'panel/';
 	        		}                                      
                 })
             .error(function(data) {

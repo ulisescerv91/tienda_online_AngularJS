@@ -1,32 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="store">
+<html lang="en" ng-app="myStoreCtrl">
 <head>
 	<meta charset="UTF-8">
 	<title></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">	
-	<script src="../bower_components/angular/angular.min.js"></script>
-	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
-	<script src="js/controller_login.js"></script>
-
-</head>
-<body ng-controller="loginCtrl" >
-	<h1>Welcome Admin</h1>
+	 <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+	 <script src="../bower_components/angular/angular.min.js"></script>
+	 <script src="../bower_components/angular-route/angular-route.min.js"></script>
+	<script src="../bower_components/angular-resource/angular-resource.min.js"></script>
 	
+<script src="js/app.js"></script>
+	<script src="js/controllers.js"></script>
+	   <script src="js/services.js"></script> 
+</head>
 
-	<form name="myForm" ng-submit="submit()"  >
-		<input type="text" name="fName" class="txtInfo" id="fname" placeholder="Username" ng-model="txtName" ng-minlength="3" required>		
-		<input type="password" class="txtInfo" id="fpass" placeholder="Password" ng-model="txtPass"  ng-minlength="3"required>
-		<input type="submit" value="Log In" ng-disabled="myForm.$invalid">
-		<div ng-show="codehack">HTML Modificado</div>
-		<!-- ngClass -->
-		<!-- <div ng-show="myForm.$submitted || myForm.fName.$touched">
-	      <span ng-show="myForm.fName.$error.required">Requiered</span>
-	      <span ng-show="myForm.fName.$error.minlength"></span>
-	    </div> -->
-	    <span ng-bind="dataError" ng-show="showError"></span>
-		
-	</form>
+
+
+<body>
+	
+	<div class="view-container">
+		<div ng-view class="view-frame"></div>
+	</div>
+	
 	
 </body>
 </html>	

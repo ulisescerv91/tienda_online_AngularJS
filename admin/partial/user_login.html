@@ -1,0 +1,13 @@
+<h1>Welcome Admin</h1>
+	<form name="myForm" ng-submit="submit()"  >
+		<input type="text" name="fName" class="txtInfo" id="fname" placeholder="Username" ng-model="txtName" ng-minlength="3" required>		
+		<input type="password" class="txtInfo" id="fpass" placeholder="Password" ng-model="txtPass"  ng-minlength="3"required>
+		<input type="submit" value="Log In" ng-disabled="myForm.$invalid">
+		
+		<!-- ngClass -->
+		<!-- <div ng-show="myForm.$submitted || myForm.fName.$touched">
+	      <span ng-show="myForm.fName.$error.required">Requiered</span>
+	      <span ng-show="myForm.fName.$error.minlength"></span>
+	    </div> -->
+	    <span ng-bind="dataError" ng-show="showError"></span>
+	</form>
