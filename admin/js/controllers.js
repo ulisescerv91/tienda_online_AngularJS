@@ -5,10 +5,6 @@
 /*CONTROLLERS*/
 var storeCtrl = angular.module('storeCtrl', []);
 
-//Panel View
-storeCtrl.controller('panelCtrl', ['$scope','$http','mensajes', function($scope,$http,mensajes){		
-	$scope.prueba="si"
-}]);
 //User login
 storeCtrl.controller('loginCtrl', ['$scope','$http','admin', function($scope,$http,admin){	
 	//Init variable MESSAGE to user
@@ -27,6 +23,7 @@ storeCtrl.controller('loginCtrl', ['$scope','$http','admin', function($scope,$ht
 			myPromise.then(function (data) {
 				//informacion desde el SERVICEs
 				console.log(data)				
+				
 			})
 			//console.log(admin.query);
 		}

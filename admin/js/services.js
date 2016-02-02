@@ -1,14 +1,11 @@
  var myServices = angular.module('myServices', []);
 
-//Factory
+//Factory *EJEMPLO
 myServices.factory("mensajes", function(){
 	//create object
     var objeto={};    
     //properties
-
-    objeto.id_user= localStorage.id_user;
-    objeto.nombre= localStorage.name_user;
-    objeto.tipo= localStorage.type_user;
+    objeto.id_user= localStorage.id_user;    
     //methods
 	objeto.getName= function(){
             return "hola";
@@ -40,7 +37,8 @@ myServices.service("admin", ['$http','$q' ,function($http,$q){
                         localStorage.setItem("id_user", data.user_id);                      
                         localStorage.setItem("name_user", data.user_name);
                         localStorage.setItem("type_user", data.user_type);                                              
-                        window.location.href = '#/panel/';                        
+                        defer.resolve(data);
+                        window.location.href = 'panel/';                                                
                     }                                      
                 })
             .error(function(data) {

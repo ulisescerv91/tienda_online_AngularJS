@@ -1,0 +1,14 @@
+<form ng-submit="submit()" name="formAddItem">
+	<input type="text" class="" id="" ng-model="item.name" placeholder="name" name="myName" ng-init="ulises">
+	<input type="textarea" class="" id="" ng-model="item.description" placeholder="description">
+	<span >IMG</span>
+	<input type="text" class="" id="" ng-model="item.price" placeholder="price">
+	<input type="text" class="" id="" ng-model="item.amount" placeholder="amount">
+	<input type="checkbox"class="ng-valid ng-dirty ng-valid-parse ng-touched " ng-model="item.descount_y_n" ng-true-value="'1'" ng-false-value="'0'" >
+	<input type="text" class="" id="" ng-model="item.descount" placeholder="%">
+	<input type="submit" value="ADD ITEM" ng-disabled="formAddItem.$invalid">
+
+</form>
+
+<!-- ng-pristine ng-untouched ng-valid
+ng-valid ng-dirty ng-valid-parse ng-touched -->
